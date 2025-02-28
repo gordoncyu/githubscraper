@@ -1,15 +1,15 @@
 let
   pkgs = import <nixos-unstable> { config = { allowUnfree = true; }; };
   python3Packages = pkgs.python312Packages;
-  pampy = import ~/nix-derivations/pampy.nix {
+  pampy = import ./nix/derivations/pampy.nix {
     inherit (pkgs) lib stdenv;
     inherit (python3Packages) buildPythonPackage fetchPypi;
   };
-  premailer = import ~/nix-derivations/premailer.nix {
+  premailer = import ./nix/derivations/premailer.nix {
     inherit (python3Packages) buildPythonPackage fetchPypi cssutils lxml cssselect requests cachetools defusedxml six;
     inherit (pkgs) lib stdenv;
   };
-  yagmail = import ~/nix-derivations/yagmail.nix {
+  yagmail = import ./nix/derivations/yagmail.nix {
     inherit (python3Packages) buildPythonPackage fetchPypi;
     inherit (pkgs) lib stdenv;
     # Provide dependencies for yagmail if needed:
