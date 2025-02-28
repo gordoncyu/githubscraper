@@ -370,6 +370,9 @@ try:
                             f.write(json_comment(comment))
                     nonesafe(op)
 
+            with open(f"{repo_path}/done", "a"):
+                pass
+
             scraped_per_lang[lri.language] += 1
             scraped_repos.add(repo.full_name)
 
