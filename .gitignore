@@ -1,0 +1,8 @@
+/.direnv
+/.jukit
+/scraped
+/progress.json
+temp.*
+*.temp.*
+*.gignore.*
+/.env
